@@ -44,13 +44,11 @@ public class MainActivity extends AppCompatActivity {
     CatergoryAdapter categoryAdapter;
     List<Category> listCategory;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
-    ApiLinhKien apiLinhKien;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        apiLinhKien = RetroClient.getInstance(Utils.BASE_URL).create(ApiLinhKien.class);
 
         Reflect();
         ActionBar();
@@ -58,25 +56,9 @@ public class MainActivity extends AppCompatActivity {
         if(isConnected(this)){
             Toast.makeText(getApplicationContext(), "Connected!",Toast.LENGTH_LONG).show();
             ActionViewFlipper();
-            getCategory();
         }else{
             Toast.makeText(getApplicationContext(), "No interet!",Toast.LENGTH_LONG).show();
         }
-    }
-
-    private void getCategory() {
-//        compositeDisposable.add(apiLinhKien.getCategory()
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(
-//                        categoryModel ->{
-//                        if(categoryModel.isSuccess()) {
-//                            Toast.makeText(getApplicationContext(), categoryModel.getResult()
-//                                    .get(0).getProductName(), Toast.LENGTH_LONG).show();
-//
-//                            }
-//                        }
-//                ));
     }
 
     private void ActionViewFlipper() {

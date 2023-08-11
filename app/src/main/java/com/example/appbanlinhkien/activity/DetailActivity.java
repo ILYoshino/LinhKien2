@@ -1,2 +1,4 @@
-package com.example.appbanlinhkien.activity;public class DetailActivity {
+package com.example.appbanlinhkien.activity;
+
+public class DetailActivity {
 }

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AppBanLinhKien</string>
+    <string name="mat_khau">Mật khẩu</string>
 </resources>
